@@ -7,3 +7,11 @@ class Node {
     this.prev = null;
   }
 }
+
+class List {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+}

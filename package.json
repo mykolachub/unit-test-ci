@@ -1,0 +1,26 @@
+{
+  "name": "unit-test-ci",
+  "version": "1.0.0",
+  "description": "Introduction in Unit testing and CI",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "lint": "eslint . --fix && prettier --write \"**/*.js\" \"**/*.json\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikolaichub/unit-test-ci.git"
+  },
+  "keywords": [],
+  "author": "Nikolai Chub",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nikolaichub/unit-test-ci/issues"
+  },
+  "homepage": "https://github.com/nikolaichub/unit-test-ci#readme",
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
+  }
+}

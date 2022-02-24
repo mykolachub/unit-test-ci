@@ -22,7 +22,17 @@ describe('Doubly Linked List', () => {
 
   it('should return element by id ', () => {});
 
-  it('should return list length', () => {});
+  it('should return list length', () => {
+    const list = new List();
+    list.append('1');
+    list.append('2');
+    list.append('3');
+
+    const actual = list.length;
+    const expected = 3;
+    const err = 'Lenght getter method works wrongly';
+    assert.deepStrictEqual(actual, expected, err);
+  });
 
   it('should return first element by value', () => {});
 

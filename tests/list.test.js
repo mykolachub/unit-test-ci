@@ -29,7 +29,7 @@ describe('Doubly Linked List', () => {
     list.append('3');
 
     const actual = list.length;
-    const expected = 3;
+    const expected = 4;
     const err = 'Lenght getter method works wrongly';
     assert.deepStrictEqual(actual, expected, err);
   });

@@ -20,7 +20,15 @@ describe('Doubly Linked List', () => {
 
   it('should extend list by another one', () => {});
 
-  it('should return element by id ', () => {});
+  it('should return element by id ', () => {
+    const list = new List();
+    list.append('1'); // 0
+
+    const actual = list.get(0);
+    const expected = '1';
+    const err = 'Get method returns wrong data';
+    assert.deepStrictEqual(actual, expected, err);
+  });
 
   it('should return list length', () => {
     const list = new List();

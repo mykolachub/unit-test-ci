@@ -15,7 +15,18 @@ describe('Doubly Linked List', () => {
     assert.deepStrictEqual(actual, expected, err);
   });
 
-  it('should insert element', () => {});
+  it('should insert element', () => {
+    const list = new List();
+    list.append('1'); // 0
+    list.append('3'); // 1
+
+    list.insert('2', 1);
+
+    const actual = list.head.next.data;
+    const expected = '2';
+    const err = 'Insert method addes data at wrong position';
+    assert.deepStrictEqual(actual, expected, err);
+  });
 
   it('should delete element', () => {});
 

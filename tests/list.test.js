@@ -4,7 +4,16 @@ const assert = require('assert').strict;
 const List = require('../lib/list');
 
 describe('Doubly Linked List', () => {
-  it('should append element', () => {});
+  it('should append element', () => {
+    const list = new List();
+    list.append('1');
+    list.append('2');
+
+    const actual = list.tail.data;
+    const expected = '2';
+    const err = 'Append method addes wrong data';
+    assert.deepStrictEqual(actual, expected, err);
+  });
 
   it('should insert element', () => {});
 

@@ -28,7 +28,18 @@ describe('Doubly Linked List', () => {
     assert.deepStrictEqual(actual, expected, err);
   });
 
-  it('should delete element', () => {});
+  it('should delete element', () => {
+    const list = new List();
+    list.append('1'); // 0
+    list.append('2'); // 1
+
+    list.delete(1);
+
+    const actual = list.tail.data;
+    const expected = '1';
+    const err = 'Delete method removes wrong elements';
+    assert.deepStrictEqual(actual, expected, err);
+  });
 
   it('should delete all elements by value', () => {});
 

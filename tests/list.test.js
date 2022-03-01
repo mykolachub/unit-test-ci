@@ -78,7 +78,26 @@ describe('Doubly Linked List', () => {
     }
   });
 
-  it('should reverse list', () => {});
+  it('should reverse list', () => {
+    const list = new List();
+    list.append('1');
+    list.append('2');
+    list.append('3');
+
+    list.reverse();
+
+    const testLoop = ['3', '2', '1'];
+    const err = 'Reverse works wrongly';
+    let tempNode = list.head;
+    let i = 0;
+    while (tempNode !== null) {
+      const actual = tempNode.data;
+      const expected = testLoop[i];
+      assert.deepStrictEqual(actual, expected, err);
+      tempNode = tempNode.next;
+      i += 1;
+    }
+  });
 
   it('should clear whole list', () => {});
 

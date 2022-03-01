@@ -149,7 +149,26 @@ describe('Doubly Linked List', () => {
     }
   });
 
-  it('should extend list by another one', () => {});
+  it('should extend list by another one', () => {
+    const list = new List();
+    const list2 = new List();
+    list.append('1');
+    list2.append('2');
+
+    list.extend(list2);
+
+    const testLoop = ['1', '2'];
+    const err = 'Extend works wrongly';
+    let tempNode = list.head;
+    let i = 0;
+    while (tempNode !== null) {
+      const actual = tempNode.data;
+      const expected = testLoop[i];
+      assert.deepStrictEqual(actual, expected, err);
+      tempNode = tempNode.next;
+      i += 1;
+    }
+  });
 
   it('should return element by id ', () => {
     const list = new List();

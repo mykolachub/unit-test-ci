@@ -61,10 +61,22 @@ describe('Doubly Linked List', () => {
 
     list.deleteAll('2');
 
-    const actual = list.tail.data;
-    const expected = '1';
-    const err = 'DeleteAll method removes wrong elements';
-    assert.deepStrictEqual(actual, expected, err);
+    const testLoop = [
+      {
+        actual: list.tail.data,
+        expected: '1',
+        err: 'Tail element is wrong',
+      },
+      {
+        actual: list.length,
+        expected: 1,
+        err: 'Length is wrong',
+      },
+    ];
+
+    for (const { actual, expected, err } of testLoop) {
+      assert.deepStrictEqual(actual, expected, err);
+    }
   });
 
   it('should clone list', () => {

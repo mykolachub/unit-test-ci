@@ -55,7 +55,28 @@ describe('Doubly Linked List', () => {
     assert.deepStrictEqual(actual, expected, err);
   });
 
-  it('should clone list', () => {});
+  it('should clone list', () => {
+    const list = new List();
+    list.append('1');
+    list.append('2');
+
+    const cloned = list.clone();
+    {
+      const actual = cloned.tail.data;
+      const expected = '2';
+      const err = 'Clone method clones wrong elements';
+      assert.deepStrictEqual(actual, expected, err);
+    }
+
+    // Removing element from primary list
+    list.delete(0);
+    {
+      const actual = cloned.length;
+      const expected = 2;
+      const err = 'Primary list changes affect cloned list';
+      assert.deepStrictEqual(actual, expected, err);
+    }
+  });
 
   it('should reverse list', () => {});
 

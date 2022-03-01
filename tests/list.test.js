@@ -85,19 +85,22 @@ describe('Doubly Linked List', () => {
     list.append('2');
 
     const cloned = list.clone();
-    {
-      const actual = cloned.tail.data;
-      const expected = '2';
-      const err = 'Clone method clones wrong elements';
-      assert.deepStrictEqual(actual, expected, err);
-    }
-
-    // Removing element from primary list
     list.delete(0);
-    {
-      const actual = cloned.length;
-      const expected = 2;
-      const err = 'Primary list changes affect cloned list';
+
+    const testLoop = [
+      {
+        actual: cloned.tail.data,
+        expected: '2',
+        err: 'Clone method clones wrong elements',
+      },
+      {
+        actual: cloned.length,
+        expected: 2,
+        err: 'Primary list changes affect cloned list',
+      },
+    ];
+
+    for (const { actual, expected, err } of testLoop) {
       assert.deepStrictEqual(actual, expected, err);
     }
   });

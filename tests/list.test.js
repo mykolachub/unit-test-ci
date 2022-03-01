@@ -99,7 +99,28 @@ describe('Doubly Linked List', () => {
     }
   });
 
-  it('should clear whole list', () => {});
+  it('should clear whole list', () => {
+    const list = new List();
+    list.append('1');
+    list.clear();
+
+    const testLoop = [
+      {
+        actual: list.head,
+        expected: null,
+        err: 'Head has next element',
+      },
+      {
+        actual: list.length,
+        expected: 0,
+        err: 'Length is not zero',
+      },
+    ];
+
+    for (const { actual, expected, err } of testLoop) {
+      assert.deepStrictEqual(actual, expected, err);
+    }
+  });
 
   it('should extend list by another one', () => {});
 

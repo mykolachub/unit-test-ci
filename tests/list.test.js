@@ -35,10 +35,22 @@ describe('Doubly Linked List', () => {
 
     list.delete(1);
 
-    const actual = list.tail.data;
-    const expected = '1';
-    const err = 'Delete method removes wrong elements';
-    assert.deepStrictEqual(actual, expected, err);
+    const testLoop = [
+      {
+        actual: list.tail.data,
+        expected: '1',
+        err: 'Tail element wrong',
+      },
+      {
+        actual: list.length,
+        expected: 1,
+        err: 'Length is wrong',
+      },
+    ];
+
+    for (const { actual, expected, err } of testLoop) {
+      assert.deepStrictEqual(actual, expected, err);
+    }
   });
 
   it('should delete all elements by value', () => {

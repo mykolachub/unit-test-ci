@@ -41,7 +41,19 @@ describe('Doubly Linked List', () => {
     assert.deepStrictEqual(actual, expected, err);
   });
 
-  it('should delete all elements by value', () => {});
+  it('should delete all elements by value', () => {
+    const list = new List();
+    list.append('1');
+    list.append('2');
+    list.append('2');
+
+    list.deleteAll('2');
+
+    const actual = list.tail.data;
+    const expected = '1';
+    const err = 'DeleteAll method removes wrong elements';
+    assert.deepStrictEqual(actual, expected, err);
+  });
 
   it('should clone list', () => {});
 

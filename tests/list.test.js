@@ -192,7 +192,29 @@ describe('Doubly Linked List', () => {
     assert.deepStrictEqual(actual, expected, err);
   });
 
-  it('should return first element by value', () => {});
+  it('should return first element by value', () => {
+    const list = new List();
+    list.append('1'); // 0
+    list.append('2'); // 1
+    list.append('2'); // 2
+
+    const testLoop = [
+      {
+        actual: list.findFirst('2'),
+        expected: 1,
+        err: 'Wrong index of existing element',
+      },
+      {
+        actual: list.findFirst('0'),
+        expected: -1,
+        err: 'Non-existing elements must be of -1 index',
+      },
+    ];
+
+    for (const { actual, expected, err } of testLoop) {
+      assert.deepStrictEqual(actual, expected, err);
+    }
+  });
 
   it('should return last element by value', () => {});
 });

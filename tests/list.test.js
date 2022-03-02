@@ -9,10 +9,22 @@ describe('Doubly Linked List', () => {
     list.append('1');
     list.append('2');
 
-    const actual = list.tail.data;
-    const expected = '2';
-    const err = 'Append method addes wrong data';
-    assert.deepStrictEqual(actual, expected, err);
+    const testLoop = [
+      {
+        actual: list.tail.data,
+        expected: '2',
+        err: 'Append method addes wrong data',
+      },
+      {
+        actual: list.length,
+        expected: 2,
+        err: 'Length is wrong',
+      },
+    ];
+
+    for (const { actual, expected, err } of testLoop) {
+      assert.deepStrictEqual(actual, expected, err);
+    }
   });
 
   it('should insert element', () => {
